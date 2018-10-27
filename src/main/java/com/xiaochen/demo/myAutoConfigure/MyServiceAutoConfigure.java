@@ -19,16 +19,16 @@ public class MyServiceAutoConfigure {
 	
 	@ConditionalOnMissingBean(MyConditionalService.class)
 	@Bean
-	public MyConditionalService initMyConditionService() {
-		logger.info(this.getClass().getName() + "已加载");
+	public MyConditionalService myConditionalService() {
+		logger.info(this.getClass().getName() + "已加载1");
 		logger.info(this.getClass().getName() + ",testAutoConfiguration:{}",testAutoConfiguration);
 		return new MyConditionalService("testAutoConfiguration",testAutoConfiguration);
 	}
 
 //	@Bean
 //	@MyConditionAnnotation(key="k1",val="v1")
-//	public MyConditionalService initMyConditionService() {
-//		logger.info(this.getClass().getName() + "已加载");
+//	public MyConditionalService myConditionalService2() {
+//		logger.info(this.getClass().getName() + "已加载2");
 //		logger.info(this.getClass().getName() + ",testAutoConfiguration:{}",testAutoConfiguration);
 //		return new MyConditionalService("testAutoConfiguration",testAutoConfiguration);
 //	}
